@@ -1,0 +1,17 @@
+@sterrebeelden_HostAddress = http://localhost:5000/sterrebeelden
+### Sterrebeelden API Requests
+### Retrieve the zodiac sign for 14 June 
+GET {{sterrebeelden_HostAddress}}/14-6
+
+
+
+### Retrieve the zodiac sign for 19 dec
+GET {{sterrebeelden_HostAddress}}/19-12
+
+### give an invalid date
+GET {{sterrebeelden_HostAddress}}/32-2
+
+### give no date
+GET {{sterrebeelden_HostAddress}}/Hello
+
+###
