@@ -15,7 +15,7 @@ do
     string input = Console.ReadLine();
     if (int.TryParse(input, out dag))
     {
-        
+
     }
     else
     {
@@ -24,7 +24,8 @@ do
 }
 while (dag == 0);
 do
-{ Console.WriteLine("Vul nu de maand in");
+{
+    Console.WriteLine("Vul nu de maand in");
     string input = Console.ReadLine();
     if (int.TryParse(input, out maand))
     {

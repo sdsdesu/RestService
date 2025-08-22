@@ -14,9 +14,9 @@ namespace RestUnitTest
     {
         SterrebeeldControler controler = null!;
         Mock<IDatumLezerService> mockService = null!;
-        string Steenbokdatum= null!;
+        string Steenbokdatum = null!;
         string Schorpiendatum = null!;
-       // string OngeeldigeDatum = null!;
+        // string OngeeldigeDatum = null!;
 
         [TestInitialize]
         public void Initialize()
