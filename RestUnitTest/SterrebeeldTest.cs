@@ -14,8 +14,7 @@ namespace RestUnitTest
     {
         SterrebeeldControler controler = null!;
         Mock<IDatumLezerService> mockService = null!;
-        string Steenbokdatum = null!;
-        string Schorpiendatum = null!;
+        
         // string OngeeldigeDatum = null!;
 
         [TestInitialize]
@@ -23,33 +22,30 @@ namespace RestUnitTest
         {
             mockService = new Mock<IDatumLezerService>();
             controler = new SterrebeeldControler(mockService.Object);
-            Steenbokdatum = "Steenbok";
-            Schorpiendatum = "Schorpioen";
+            
         }
 
         [TestMethod]
-        public async Task TestGetSteenbok()
+        [DataRow(21, 3, "Ram")]
+        [DataRow(20, 4, "Stier")]
+        [DataRow(21, 5, "Tweelingen")]
+        
+        public async Task TestOkData(int dag, int maand, string sterebeeld)
         {
-            mockService.Setup(s => s.sterrebeeldNaam(22, 12)).ReturnsAsync(Steenbokdatum);
-            var result = await controler.FindById(22, 12);
+            mockService.Setup(s => s.sterrebeeldNaam(dag, maand)).ReturnsAsync(sterebeeld);
+            var result = await controler.FindById(dag, maand);
             Assert.IsInstanceOfType(result, typeof(OkObjectResult));
             var okResult = result as OkObjectResult;
-            Assert.AreEqual(Steenbokdatum, okResult?.Value);
+            Assert.AreEqual(sterebeeld, okResult?.Value);
         }
+        
         [TestMethod]
-        public async Task TestGetSchorpioen()
+        [DataRow(32, 13, "")]
+        [DataRow(0, 0, "")]
+        public async Task TestGetOngeeldigeData(int dag, int maand, string sterebeeld)
         {
-            mockService.Setup(s => s.sterrebeeldNaam(22, 11)).ReturnsAsync(Schorpiendatum);
-            var result = await controler.FindById(22, 11);
-            Assert.IsInstanceOfType(result, typeof(OkObjectResult));
-            var okResult = result as OkObjectResult;
-            Assert.AreEqual(Schorpiendatum, okResult?.Value);
-        }
-        [TestMethod]
-        public async Task TestGetOngeeldigeDatum()
-        {
-            mockService.Setup(s => s.sterrebeeldNaam(32, 13)).ReturnsAsync(string.Empty);
-            var result = await controler.FindById(32, 13);
+            mockService.Setup(s => s.sterrebeeldNaam(dag, maand)).ReturnsAsync(sterebeeld);
+            var result = await controler.FindById(dag, maand);
             Assert.IsInstanceOfType(result, typeof(NotFoundResult));
         }
 
