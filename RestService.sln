@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestClient", "RestClient\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestUnitTest", "RestUnitTest\RestUnitTest.csproj", "{1E63CADF-2189-4C46-8C24-A9B2A17E6EA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestIntegrationTest", "RestIntegrationTest\RestIntegrationTest.csproj", "{C8A18B1E-A1D4-4F31-887E-BA6E514B3E9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1E63CADF-2189-4C46-8C24-A9B2A17E6EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E63CADF-2189-4C46-8C24-A9B2A17E6EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E63CADF-2189-4C46-8C24-A9B2A17E6EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A18B1E-A1D4-4F31-887E-BA6E514B3E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A18B1E-A1D4-4F31-887E-BA6E514B3E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A18B1E-A1D4-4F31-887E-BA6E514B3E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A18B1E-A1D4-4F31-887E-BA6E514B3E9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
